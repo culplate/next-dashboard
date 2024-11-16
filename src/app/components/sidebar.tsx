@@ -3,8 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import SidebarItem from '@/app/components/sidebar-item';
-import { useRouter } from 'next/router';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Sidebar() {
   const router = useRouter();
@@ -42,7 +41,10 @@ export default function Sidebar() {
             Companies
           </SidebarItem>
         </ul>
-        <button className="flex items-center gap-2 p-6 mt-auto mx-auto">
+        <button
+          className="flex items-center gap-2 p-6 mt-auto mx-auto"
+          onClick={() => handleExitClick()}
+        >
           <Image
             width={18}
             height={18}
